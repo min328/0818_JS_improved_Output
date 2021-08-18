@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 향상과정 Output (21/08/18)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body onload="fnTest()">
+<!-- 이벤트 핸들러(=이벤트가 발생하면 지정한 코드를 실행하는 것) -->
+<!-- 
+    참고사항
+    document.write를 사용할 때 함수의 정의에 포함되어 있고 html내용이 먼저 로드되었다면 함수의 정의에 포함된 document.write는 기존에 출력된 모든html내용을 제거하고 자기 자신의 내용만 출력된다. -->
+<!-- 
+    출력이 완료되기 전에 document.write가 실행되면 출력내용과 함께 출력되지만
+    출력이 완료된 후에 document.write가 실행되면 이미 출력된 내용은 삭제되고 document.write의 출력내용만 출력된다. -->
+    <h1>JS출력방법</h1>
+    <P> 1. alert("출력내용");
+        <br>
+        2. document.write("출력내용");
+        <br>
+        3. console.log("출력내용");
+    </P>
+    <script>
+        document.write("Hello JavaScript");
+        //script tag의 위치에서 적용되어 출력됩니다.
+        
+        function fnTest(){
+            document.write("Hello JavaScript");
+        }
+    </script>
+    <script>
+        //jQeury 적용된 상황에서
+        $(function(){
+            document.write("jQuery와 함께");
+        });
+    </script>
+    <script>
+        console.log("console log OK!!");
+    </script>
+    
+</body>
+</html>
